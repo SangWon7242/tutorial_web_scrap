@@ -21,7 +21,17 @@ if resp.status_code == 200:
   
   # print(soup.find_all('strong', class_="sa_text_strong"))
   
+  '''
+  # find_all 문법을 사용하여 검색
   head_line_news_title_list = soup.find_all('strong', class_="sa_text_strong")
+  
+  for idx, title in enumerate(head_line_news_title_list):
+    no = idx + 1
+    print(f"{no} : {title.text}")
+  '''    
+  
+  head_line_news_title_list = soup.select(".sa_text_strong")
+  # print(head_line_news_title_list)
   
   for idx, title in enumerate(head_line_news_title_list):
     no = idx + 1
